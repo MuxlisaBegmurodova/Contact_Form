@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Kontaktlar Jadvali</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>№</th>
+                <th>Ism</th>
+                <th>Familiya</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Xabar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ msg.first_name }}</td>
+                <td>{{ msg.last_name }}</td>
+                <td>{{ msg.phone }}</td>
+                <td>{{ msg.email }}</td>
+                <td>{{ msg.message }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
